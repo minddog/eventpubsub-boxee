@@ -1,0 +1,23 @@
+Installing the Twilio Boxee prototype app:
+
+Step 1:
+vi ~/Library/Application\ Support/BOXEE/UserData/profiles/<username>/shortcuts.xml
+    <shortcut>
+        <name>Twilio</name>
+        <path pathversion="1">app://twilio/</path>
+        <thumbnail pathversion="1">http://www.twilio.com/resources/images/homepage/logo.png</thumbnail>
+        <private>false</private>
+        <adult>false</adult>
+        <country-allow>true</country-allow>
+        <country>all</country>
+    </shortcut>
+
+Step 2:
+Extract the contents of the zip into ~/Library/Application\ Support/BOXEE/UserData/apps/twilio
+cd ~/Library/Application\ Support/BOXEE/UserData/apps/
+unzip ~/Downloads/twilio-boxee.zip
+
+Step 3:
+Open Boxee and hit escape to see the shortcuts menu
+You should then see a Twilio icon, click that.  You'll see a black screen when its started.
+Now start playing a video.  You should now have messaging overlay during your playback.
