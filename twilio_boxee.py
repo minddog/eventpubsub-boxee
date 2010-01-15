@@ -20,7 +20,7 @@ class boxee_twilio_event(twilio_event):
         try:
             player = mc.GetPlayer()
             player.pause()
-        except:
+        except: # TODO FIX ME when not falling asleep
             pass
         print "incoming call from %s" % data['Caller']
 
