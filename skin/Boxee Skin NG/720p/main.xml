@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<window type="window" id="14000">
+    <onload lang="python"><![CDATA[ 
+from twilio_boxee import run
+run()
+]]></onload>
+    <defaultcontrol always="true">100</defaultcontrol>
+    <allowoverlay>no</allowoverlay>
+    <controls>
+    </controls>
+</window>

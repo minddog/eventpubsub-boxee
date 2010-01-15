@@ -1,0 +1,15 @@
+<app>
+    <id>twilio</id>
+    <name>Twiio</name>
+    <version>1.0</version>
+    <description>Twilio's super duper app</description>
+    <thumb>http://www.twilio.com/resources/images/homepage/logo.png</thumb>
+    <repository>http://dir.boxee.tv/apps</repository>
+    <media>video</media>
+    <copyright>Twilio</copyright>
+    <email>support@boxee.tv</email>
+    <type>skin</type>
+    <startWindow>14000</startWindow>
+    <platform>all</platform>
+    <minversion>0.9.10</minversion>
+</app>
