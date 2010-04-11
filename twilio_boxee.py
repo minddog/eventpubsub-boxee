@@ -3,9 +3,9 @@ import asyncore
 import mc
 import simplejson as json
 
-EVENT_PATH = "/"
-EVENT_HOST = ""
-EVENT_PORT = 8080
+EVENTPUBSUB_PATH = "/"
+EVENTPUBSUB_HOST = ""
+EVENTPUBSUB_PORT = 8080
 
 BOXEE_WEB_PATH = "/Applications/Boxee.app/Contents/Resources/Boxee/web"
 
@@ -35,5 +35,5 @@ class boxee_twilio_event(eventpubsub_client):
         item_file.close()
         
 def run():
-    event = boxee_twilio_event(EVENT_HOST, EVENT_PORT, EVENT_PATH)
+    event = boxee_twilio_event(EVENTPUBSUB_HOST, EVENTPUBSUB_PORT, EVENTPUBSUB_PATH)
     asyncore.loop()

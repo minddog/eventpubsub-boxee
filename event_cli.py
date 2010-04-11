@@ -1,8 +1,8 @@
 from eventpubsub_client import eventpubsub_client
 import asyncore
-EVENT_PATH = "/"
-EVENT_HOST = ""
-EVENT_PORT = 8080
+EVENTPUBSUB_PATH = "/"
+EVENTPUBSUB_HOST = ""
+EVENTPUBSUB_PORT = 8080
 
 class event_cli(eventpubsub_client):
     def handle_call_status(self, data):
