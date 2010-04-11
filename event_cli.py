@@ -1,10 +1,10 @@
-from twilio_event_client import twilio_event
+from eventpubsub_client import eventpubsub_client
 import asyncore
-# EVENT_URL = '/2008-08-01/Accounts/*?sid=AC835bd998c432f1a1907789f75e350c03&auth=mbMDHIlrl68%2B85nyp6ceG1C7vDc%3D'
-# EVENT_URL = '/2008-08-01/Accounts/AC699e22140410f059a02bd01c1950cfd2/*?sid=AC699e22140410f059a02bd01c1950cfd2&auth=fYRmqxbWK21aXjD1ogL2rsxcbIM%3D'
-EVENT_URL = "/"
+EVENT_PATH = "/"
+EVENT_HOST = ""
+EVENT_PORT = 8080
 
-class cli_twilio_event(twilio_event):
+class event_cli(eventpubsub_client):
     def handle_call_status(self, data):
         print data
 
@@ -24,7 +24,7 @@ class cli_twilio_event(twilio_event):
         print "caller hungup"
 
 def run():
-    event = cli_twilio_event('blackacid.org', 8080, EVENT_URL)
+    event = event_cli(EVENTPUBSUB_HOST, EVENTPUBSUB_PORT, EVENTPUBSUB_PATH)
     asyncore.loop()
 
 run()
