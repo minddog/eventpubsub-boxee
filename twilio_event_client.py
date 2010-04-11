@@ -1,23 +1,28 @@
+import sys,os
+sys.path.append(os.path.abspath(os.path.dirname('__file__')))
+
 import re, string
 
 import asyncore
 import socket
 import cgi 
+import simplejson as json
 
-EXTRACT_EVENT_EXPR = "^.*temsg\(\"(?P<name>[a-zA-Z-_0-9/]*)\", \"(?P<value>.*)\"\).*$"
+
 class twilio_event(asyncore.dispatcher_with_send):
-    def __init__(self, host, path):
+    def __init__(self, host, port, path):
         asyncore.dispatcher_with_send.__init__(self)
 
         self.host = host
         self.path = path
-
+        self.port = port
+        
         self.header = None
 
         self.data = ""
 
         self.create_socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.connect((host, 80))
+        self.connect((host, port))
 
     def handle_connect(self):
         # connection succeeded; send request
@@ -49,8 +54,14 @@ class twilio_event(asyncore.dispatcher_with_send):
 
         if data and len(data.strip()) != 0:
             try:
-                result = re.findall(EXTRACT_EVENT_EXPR, data, re.MULTILINE)
-                [self.handle_event(method, data) for method, data in result]
+                print data
+                result = json.loads(data)
+                if result:
+                    try:
+                        [self.handle_event(method, result[method]) for method in result.keys()]
+                    except ValueError, e:
+                        pass
+                    
             except AttributeError, e:
                 print "Error processing data %s: %s" % (data, e)
 
@@ -59,8 +70,12 @@ class twilio_event(asyncore.dispatcher_with_send):
 
     def handle_event(self, name, value):
         print name
-        value = cgi.parse_qs(value)
+        print value
+        # value = cgi.parse_qs(value)
+        # print value
         try:
+            value = json.loads(value[0])
+            print value
             event = {'all': self.handle_init,
                      'twilio-call/info': self.handle_info,
                      'twilio-gather/end': self.handle_gather,
