@@ -1,10 +1,10 @@
-Installing the Twilio Boxee prototype app:
+Installing the EventPubSub Example:
 
 Step 1:
 vi ~/Library/Application\ Support/BOXEE/UserData/profiles/<username>/shortcuts.xml
     <shortcut>
-        <name>Twilio</name>
-        <path pathversion="1">app://twilio/</path>
+        <name>EventPubSub w/ Twilio</name>
+        <path pathversion="1">app://eventpubsub/</path>
         <thumbnail pathversion="1">http://www.twilio.com/resources/images/homepage/logo.png</thumbnail>
         <private>false</private>
         <adult>false</adult>
@@ -13,9 +13,9 @@ vi ~/Library/Application\ Support/BOXEE/UserData/profiles/<username>/shortcuts.x
     </shortcut>
 
 Step 2:
-Extract the contents of the zip into ~/Library/Application\ Support/BOXEE/UserData/apps/twilio
+Extract the contents of the zip into ~/Library/Application\ Support/BOXEE/UserData/apps/eventpubsub
 cd ~/Library/Application\ Support/BOXEE/UserData/apps/
-unzip ~/Downloads/twilio-boxee.zip
+unzip ~/Downloads/eventpubsub.zip
 
 Step 3:
 Open Boxee and hit escape to see the shortcuts menu
