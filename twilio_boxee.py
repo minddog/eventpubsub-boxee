@@ -4,7 +4,7 @@ import mc
 import simplejson as json
 
 EVENTPUBSUB_PATH = "/"
-EVENTPUBSUB_HOST = ""
+EVENTPUBSUB_HOST = "blackacid.org"
 EVENTPUBSUB_PORT = 8080
 
 BOXEE_WEB_PATH = "/Applications/Boxee.app/Contents/Resources/Boxee/web"
@@ -19,8 +19,10 @@ class boxee_twilio_event(eventpubsub_client):
     def handle_init(self, data):
         pass
 
+    def handle_end(self, data):
+        pass
+    
     def handle_start(self, data):
-        self._update_playerinfo(mc)
         message = str("incoming call from " + data["Caller"])
         mc.ShowDialogNotification(message)
         print message

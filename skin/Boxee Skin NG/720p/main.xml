@@ -7,5 +7,18 @@ run()
     <defaultcontrol always="true">100</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <controls>
+        <include>Common_Background</include>
+        <include>Common_Status</include>
+        <control type="label" id="105">
+            <posx>0</posx>
+            <posy>170</posy>
+            <width>1280</width>
+            <height>520</height>
+            <font>font36b</font>
+            <align>center</align>
+            <aligny>center</aligny>
+            <label>Loaded EventPubSub Twilio Example</label>
+            <textcolor>white</textcolor>
+        </control>
     </controls>
 </window>

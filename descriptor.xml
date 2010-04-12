@@ -1,15 +1,16 @@
 <app>
-    <id>twilio</id>
-    <name>Twiio</name>
+    <id>eventpubsub</id>
+    <name>EventPubSub Example</name>
     <version>1.0</version>
-    <description>Twilio's super duper app</description>
+    <description>EventPubSub Example Application</description>
     <thumb>http://www.twilio.com/resources/images/homepage/logo.png</thumb>
     <repository>http://dir.boxee.tv/apps</repository>
     <media>video</media>
     <copyright>Twilio</copyright>
-    <email>support@boxee.tv</email>
+    <email>adam@twilio.com</email>
     <type>skin</type>
     <startWindow>14000</startWindow>
     <platform>all</platform>
-    <minversion>0.9.10</minversion>
+    <minversion>0.9.11</minversion>
+    <test-app>true</test-app>
 </app>
